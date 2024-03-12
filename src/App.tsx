@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Sidebar from './components/sidebar/Sidebar';
 import Navbar from './components/navbar/Navbar';
 import Dashbaord from './components/dashboard/Dashbaord';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
 
 
 function App() {
 
+  const sidebarOn = useSelector((state: RootState) => state.sidebar.sidebarOn)
+
   return (
     <div className="grid lg:grid-cols-6 sm:grid-cols-12 gap-5 relative">
-      <div className={`lg:col-span-1 lg:w-1/6 sm:w-1/12 h-screen fixed z-20 hidden sm:block`}>
-        <Sidebar />
+      <div className={`lg:col-span-1 lg:w-1/6  h-screen fixed z-20 sm:block transition-[width] duration-300 ${sidebarOn ? 'max-w-80 w-4/5 sm:w-3/4' : 'w-0 sm:w-1/12'} z-30`}>
+        <Sidebar/>
       </div>
       <div className='lg:col-span-1 sm:col-span-1'/>
       <div className='lg:col-span-5 sm:col-span-11 w-full relative'>
@@ -21,7 +25,6 @@ function App() {
         {/* <div className='h-[2px] shadow-inner shadow-grey2 opacity-70 ml-2'></div> */}
         <Dashbaord/>
       </div>
-      
     </div>
   );
 }
