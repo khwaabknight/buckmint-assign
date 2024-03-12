@@ -75,12 +75,10 @@ function Sidebar() {
         <button onClick={() => dispatch(closeSidebar())} ><RxCross2 size={20} /></button>
       </div>
 
-      <p className='font-poppins lg:text-4xl md:text-xl text-lg font-semibold mt-10 h-1/6 text-black text-center'>
+      <p className='font-poppins lg:text-4xl md:text-xl text-lg font-semibold mt-10 h-[10%] text-black text-center'>
         WeHR
       </p>
-      <SideBarLinks mmlinks={mainMenuLinks} otherLinks={otherLinks}  >
-        main menu
-      </SideBarLinks>
+      <SideBarLinks mmlinks={mainMenuLinks} otherLinks={otherLinks}  />
     </div>
   )
 }

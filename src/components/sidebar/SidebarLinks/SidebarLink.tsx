@@ -18,7 +18,7 @@ function SidebarLink({icon:Icon,text,link}:SidebarLinkProps) {
 
   return (
     <Link to={link} className={`flex items-center gap-6 `}>
-      <Icon fill={`${currLink ? '#FF5151' : '#686868'}`} height={24} width={24}/>
+      <Icon fill={`${currLink ? '#FF5151' : '#686868'}`} size={17}/>
       <p className={`${currLink ? 'text-main' : 'text-priSubtitle'} 
       lg:block ${sidebarOn?'sm:block':'sm:hidden'}
       capitalize font-poppins text-base font-normal
