@@ -21,7 +21,7 @@ function Card2({title,count,men,women,pastmonth,img}:Card2Props) {
         </div>
         <div className='relative flex flex-col justify-start items-center gap-3'>
           <div className='relative'>
-            <img src={img} alt="" />
+            <img src={img} alt="" className='z-10'/>
           </div>
 
           <div className='px-3 py-1 bg-lightOrange rounded max-w-fit'>

@@ -69,20 +69,17 @@ function Sidebar() {
 
 
   return (
-    <div className={`sm:flex flex-col items-center gap-10 bg-backgrd border-r border-grey5 w-11/12 h-screen relative`}>
+    <div className={`sm:flex h-screen flex-col items-center justify-start bg-backgrd border-r border-grey5 w-full relative`}>
 
       <div className={`lg:hidden p-5 ${sidebarOn ? 'sm:flex' : 'sm:hidden'} absolute top-2 right-2 text-grey2 hover:text-priSubtitle`}>
         <button onClick={() => dispatch(closeSidebar())} ><RxCross2 size={20} /></button>
       </div>
 
-      <p className='font-poppins p-3 lg:text-4xl md:text-xl text-lg font-semibold sm:mt-10 text-black text-center'>
+      <p className='font-poppins lg:text-4xl md:text-xl text-lg font-semibold mt-10 h-1/6 text-black text-center'>
         WeHR
       </p>
-      <SideBarLinks links={mainMenuLinks} >
+      <SideBarLinks mmlinks={mainMenuLinks} otherLinks={otherLinks}  >
         main menu
-      </SideBarLinks>
-      <SideBarLinks links={otherLinks}>
-        other
       </SideBarLinks>
     </div>
   )

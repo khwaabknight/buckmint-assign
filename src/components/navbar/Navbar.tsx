@@ -19,7 +19,7 @@ function Navbar() {
 
   const [searchString, setSearchString] = useState('');
   const dispatch = useDispatch();
-  const [showSearchbar, setShowSearchbar] = useState(true);
+  const [showSearchbar, setShowSearchbar] = useState(false);
 
   const onChange = (str:string) => {
     setSearchString(str);
@@ -32,7 +32,7 @@ function Navbar() {
   }
 
   return (
-    <div className='flex justify-between items-center sm:py-6 py-2 sm:ml-2 sm:pr-12 sm:pl-0 px-6 border-b z-10'>
+    <div className='flex justify-between items-center lg:ml-6 sm:py-6 py-2 sm:ml-2 sm:pr-12 sm:pl-0 px-6 border-b z-20'>
       <div className='flex justify-center items-center gap-2'>
         <div className={`px-3 lg:hidden flex items-center justify-center text-grey1 ${''}`} onClick={() => dispatch(openSidebar())}>
           <RxHamburgerMenu size={20} />
